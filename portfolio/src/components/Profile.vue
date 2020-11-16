@@ -1,8 +1,8 @@
 <template>
   <section class="profile">
-    <h2>Profile</h2>
+    <h2 class="blind">Profile</h2>
     <div class="profile_content">
-      <img src="" alt="" />
+      <img src="@/assets/images/port_01.jpg" alt="" />
 
       <ul class="profile_text">
         <li>백승인</li>
@@ -22,5 +22,36 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "../assets/css/style.scss";
+
+.profile {
+  @include setFlex(flex, left, center);
+
+  .profile_content {
+    position: relative;
+
+    > img {
+      display: block;
+      width: 100%;
+      filter: brightness(0.4);
+    }
+
+    .profile_text {
+      @include setPosition(absolute, 50%, auto, auto, 40px, 970);
+      transform: translate(0, -50%);
+
+      > li {
+        height: 40px;
+        font-size: 14px;
+        color: $color01;
+
+        > span {
+          font-size: 12px;
+          color: rgb(203, 203, 203);
+        }
+      }
+    }
+  }
+}
 </style>
