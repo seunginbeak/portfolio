@@ -22,5 +22,8 @@
 .swiper-container .swiper-button-next {left: 180px;}
 .swiper-pagination {left: 120px;}
 
-.swiper-container .swiper-button-prev::after {content: "BACK"}
-.swiper-container .swiper-button-next::after {content: "NEXT"}
+.swiper-container .swiper-button-prev::after {content: "BACK";}
+.swiper-container .swiper-button-next::after {content: "NEXT";}
+
+.swiper-container .swiper-button-prev:hover::after,
+.swiper-container .swiper-button-next:hover::after {border-bottom: 3px solid white;}

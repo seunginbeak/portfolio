@@ -3,6 +3,7 @@
     <h2 class="blind"></h2>
 
     <div class="swiper-container">
+      <!-- swiper 플러그인 사용 -->
       <Swiper
         class="swiper-wrapper"
         :slides-per-view="1"
@@ -13,14 +14,17 @@
       >
         <swiper-slide
           class="swiper-slide"
-          v-for="swiperPage in swiperText"
+          v-for="swiperPage in SwiperTextList"
           :key="swiperPage.id"
         >
           <div class="swiper_text">
             <strong> {{ swiperPage.title }} </strong>
-
             <p>
-              {{ swiperPage.text }}
+              {{ swiperPage.text }} <br />
+              {{ swiperPage.text2 }} <br />
+              {{ swiperPage.text3 }} <br />
+              {{ swiperPage.text4 }} <br />
+              {{ swiperPage.text5 }}
             </p>
           </div>
         </swiper-slide>
@@ -41,37 +45,30 @@ export default {
     Swiper,
     SwiperSlide,
   },
-  data() {
-    return {
-      swiperText: [
-        {
-          title: "PAGE_01",
-          text:
-            "content_01 : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptate, explicabo, cum porro dicta iure aliquid pariatur magnam nulla provident distinctio laboriosam dignissimos! Nostrum corporis, eius inventore doloribus excepturi eum!",
-        },
-        {
-          title: "PAGE_02",
-          text:
-            "content_02 : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptate, explicabo, cum porro dicta iure aliquid pariatur magnam nulla provident distinctio laboriosam dignissimos! Nostrum corporis, eius inventore doloribus excepturi eum!",
-        },
-        {
-          title: "PAGE_03",
-          text:
-            "content_03 : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptate, explicabo, cum porro dicta iure aliquid pariatur magnam nulla provident distinctio laboriosam dignissimos! Nostrum corporis, eius inventore doloribus excepturi eum!",
-        },
-      ],
-    };
+  methods: {
+    // 함수가 없으면 플러그인에서 console에 경고메시지
+    onSwiper() {},
+    onSlideChange() {},
+  },
+  computed: {
+    SwiperTextList() {
+      return this.$store.state.SwiperModule.swiperText;
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/css/style.scss";
+// swiper: prev & next 버튼에대한 css
 @import "../assets/css/swiper.css";
 
+// swiper_slide
 .swiper-slide {
   @include setFlex(flex, left, center);
   height: 90vh;
+  color: $color01;
+  background-color: $color02;
 
   .swiper_text {
     @include setFlex(flex, center, left);
@@ -91,9 +88,5 @@ export default {
     }
   }
 }
-
-.swiper-slide {
-  background-color: $color02;
-  color: $color01;
-}
+// swiper_slide end
 </style>

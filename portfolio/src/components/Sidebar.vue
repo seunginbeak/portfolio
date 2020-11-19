@@ -1,13 +1,22 @@
 <template>
   <aside class="sidebar">
     <div class="sidebar_content">
-      <router-link to="/work"><h2>PORTFOLIO</h2></router-link>
+      <router-link :to="SidebarText.link">
+        <!-- Home / Work에따라 text와 a link를 가져와 교체 -->
+        <h2>{{ SidebarText.title }}</h2>
+      </router-link>
     </div>
   </aside>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    SidebarText: {
+      type: Object,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -19,9 +28,23 @@ export default {};
   width: 80px;
   color: $color01;
   background-color: $color02;
-
+  // sidebar content
   .sidebar_content {
     transform: rotate(-90deg);
+    h2 {
+      &::after {
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: white;
+      }
+      &:hover::after {
+        width: 0;
+        transition: 1s;
+      }
+    }
   }
+  // sidebar content end
 }
 </style>

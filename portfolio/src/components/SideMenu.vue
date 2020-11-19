@@ -1,68 +1,111 @@
 <template>
   <div class="side_menu">
-    <div class="side_menu_overlay"></div>
-
-    <div class="side_menu_fixed">
+    <!-- hidden overlay 클릭시 제거 -->
+    <div
+      class="side_menu_overlay"
+      @click="hidden"
+      :class="{ show: sideMove.isMove }"
+    ></div>
+    <!-- hamburger 메뉴 클릭시 move -->
+    <div class="side_menu_fixed" :class="{ move: sideMove.isMove }">
+      <!-- gnb -->
       <nav class="gnb">
         <ul>
           <li>
-            <a href="">
+            <router-link to="/">
               <strong>HOME</strong>
-            </a>
+              <span>Go to Home</span>
+            </router-link>
           </li>
           <li>
-            <a href="">
+            <a href="/Work">
               <strong>WORK</strong>
+              <span>Go to Work</span>
             </a>
           </li>
           <li>
             <a href="">
               <strong>MAIL</strong>
+              <span>Go to Mail</span>
             </a>
           </li>
         </ul>
       </nav>
-
+      <!-- gnb end-->
+      <!-- SNS -->
       <div class="sns">
         <ul>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
+          <li v-for="snslist_all in snslist_text" :key="snslist_all.id">
+            <SnsList :snslist_all="snslist_all" />
+          </li>
         </ul>
       </div>
+      <!-- SNS end -->
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import SnsList from "./card/sns_list.vue";
+
+export default {
+  props: {
+    sideMove: {
+      type: Object,
+      required: true,
+    },
+  },
+  components: {
+    SnsList,
+  },
+  computed: {
+    // store에 sns_list
+    snslist_text() {
+      return this.$store.state.SnsModule.sns_list;
+    },
+  },
+  methods: {
+    hidden() {
+      // console.log("hide", this.sideMove);
+      this.$emit("hidden", this.sideMove);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/css/style.scss";
 
 .side_menu {
+  // overlay
   .side_menu_overlay {
     @include setPosition(fixed, 0, 0, 0, 0, 1010);
-    // 클릭시 오버레이 right: 0
-    right: 100%;
-  }
+    display: none;
 
+    &.show {
+      display: block;
+    }
+  }
+  // overlay end
   .side_menu_fixed {
     @include setPosition(fixed, 0, 0, 0, auto, 1010);
     @include setFlex(flex, center, center);
     background: white;
-    // 클릭시 right: 0
     right: -100%;
+    transition: 0.5s;
+    // move 클래스
+    &.move {
+      right: 0;
+      transition: 0.5s;
+    }
 
+    // gnb / sns 공통
     .gnb,
     .sns {
       display: flex;
       height: 100%;
     }
-
+    // gnb
     .gnb {
       width: 300px;
       padding: 0 40px;
@@ -72,16 +115,31 @@ export default {};
         align-self: center;
         > li {
           padding: 24px 0;
+          color: rgb(147, 147, 147);
+          transition: 0.5s;
+
+          &:hover {
+            color: $color02;
+            transition: 1s;
+          }
+
           > a {
             display: block;
-            > strong {
+            > strong,
+            span {
+              display: block;
               font-size: 32px;
+              font-weight: 900;
+            }
+            span {
+              font-size: 20px;
             }
           }
         }
       }
     }
-
+    // gnb end
+    // sns
     .sns {
       width: 80px;
       color: white;
@@ -94,6 +152,7 @@ export default {};
         }
       }
     }
+    // sns end
   }
 }
 </style>
