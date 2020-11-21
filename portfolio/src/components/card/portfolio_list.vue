@@ -2,7 +2,7 @@
   <div class="portfolio_list">
     <img :src="imageLink" :alt="portfolio_list.alt" />
     <div class="overlay_bg">
-      <a href="">
+      <a :href="portfolio_list.link">
         <p>{{ portfolio_list.overlay_text }}</p>
       </a>
     </div>
