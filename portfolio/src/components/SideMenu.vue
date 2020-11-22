@@ -90,7 +90,7 @@ export default {
   .side_menu_fixed {
     @include setPosition(fixed, 0, 0, 0, auto, 1010);
     @include setFlex(flex, center, center);
-    background: white;
+    background: $ColorWhite;
     right: -100%;
     transition: 0.5s;
     // move 클래스
@@ -115,11 +115,11 @@ export default {
         align-self: center;
         > li {
           padding: 24px 0;
-          color: rgb(147, 147, 147);
+          color: $Colorgray;
           transition: 0.5s;
 
           &:hover {
-            color: $color02;
+            color: $ColorBlack;
             transition: 1s;
           }
 
@@ -128,11 +128,11 @@ export default {
             > strong,
             span {
               display: block;
-              font-size: 32px;
+              font-size: $font-x-lg;
               font-weight: 900;
             }
             span {
-              font-size: 20px;
+              font-size: $font-lg;
             }
           }
         }
@@ -142,8 +142,8 @@ export default {
     // sns
     .sns {
       width: 80px;
-      color: white;
-      background-color: $color02;
+      color: $ColorWhite;
+      background-color: $ColorBlack;
       > ul {
         align-self: flex-end;
         margin: 0 auto;
@@ -153,6 +153,18 @@ export default {
       }
     }
     // sns end
+  }
+}
+
+// 모바일
+@media screen and (max-width: 767px) {
+  .side_menu {
+    .side_menu_fixed {
+      // gnb
+      .gnb {
+        width: auto;
+      }
+    }
   }
 }
 </style>

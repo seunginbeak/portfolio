@@ -26,8 +26,8 @@ export default {
   @include setFlex(flex, center, center);
   @include setPosition(fixed, 0, 0, 0, auto, 990);
   width: 80px;
-  color: $color01;
-  background-color: $color02;
+  color: $ColorWhite;
+  background-color: $ColorBlack;
   // sidebar content
   .sidebar_content {
     transform: rotate(-90deg);
@@ -37,7 +37,7 @@ export default {
         display: block;
         width: 100%;
         height: 3px;
-        background-color: white;
+        background-color: $ColorWhite;
       }
       &:hover::after {
         width: 0;

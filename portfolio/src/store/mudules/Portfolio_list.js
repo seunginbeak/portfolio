@@ -27,6 +27,7 @@ export default {
         overlay_text: "Portfolio 바로가기",
         image: "/work_04.jpg",
         alt: "포트폴리오 바로가기 이미지",
+        link: "https://bsi0228.netlify.app/"
       },
       {
         title: "제작중",

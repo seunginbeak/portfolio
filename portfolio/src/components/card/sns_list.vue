@@ -26,12 +26,12 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 28px;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: $font-x-lg;
+    color: $Colorgray;
     transition: 0.5s;
     // hover
     &:hover {
-      color: white;
+      color: $ColorWhite;
       transition: 0.5s;
     }
     // hover end

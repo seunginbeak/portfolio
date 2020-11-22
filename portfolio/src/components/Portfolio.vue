@@ -33,7 +33,7 @@ export default {
   padding: 80px 40px;
   box-sizing: border-box;
   > h2 {
-    font-size: 32px;
+    font-size: $font-x-lg;
     font-weight: 900;
   }
   .portfolio_content {

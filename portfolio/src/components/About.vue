@@ -1,6 +1,6 @@
 <template>
   <section class="about">
-    <h2>About</h2>
+    <h2 class="blind">About</h2>
     <div class="about_content">
       <div class="about_img">
         <img src="@/assets/images/port_02.jpg" alt="프로필 이미지" />
@@ -41,7 +41,7 @@ export default {};
 .about {
   padding: 80px 40px;
   box-sizing: border-box;
-  background-color: $color02;
+  background-color: $ColorBlack;
   .about_content {
     @include setFlex(flex, center, center);
     column-gap: 40px;
@@ -51,9 +51,9 @@ export default {};
     // text
     .about_text {
       flex: 1;
-      color: $color01;
+      color: $ColorWhite;
       .title {
-        font-size: 32px;
+        font-size: $font-x-lg;
         font-weight: 900;
       }
       strong {
@@ -61,8 +61,8 @@ export default {};
         margin-top: 20px;
       }
       p {
-        font-size: 12px;
-        line-height: 30px;
+        font-size: $font-sm;
+        line-height: 25px;
 
         &.text_01 {
           margin-top: 20px;
@@ -73,6 +73,69 @@ export default {};
       }
     }
     // text end
+  }
+}
+
+// 태블릿
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+  .about {
+    padding: 40px 20px;
+    .about_content {
+      column-gap: 20px;
+      // text
+      .about_text {
+        flex: none;
+        width: 460px;
+        .title {
+          font-size: $font-lg;
+        }
+        p {
+          line-height: 20px;
+
+          &.text_01 {
+            margin-top: 10px;
+          }
+          &.text_02 {
+            margin-top: 10px;
+          }
+        }
+      }
+      // text end
+    }
+  }
+}
+
+// 모바일
+@media screen and (max-width: 767px) {
+  .about {
+    padding: 40px 20px;
+    .about_content {
+      display: block;
+      column-gap: normal;
+      .about_img {
+        max-width: 320px;
+        flex: none;
+      }
+      // text
+      .about_text {
+        flex: none;
+        .title {
+          margin-top: 10px;
+          font-size: $font-lg;
+        }
+        p {
+          line-height: 20px;
+
+          &.text_01 {
+            margin-top: 10px;
+          }
+          &.text_02 {
+            margin-top: 10px;
+          }
+        }
+      }
+      // text end
+    }
   }
 }
 </style>

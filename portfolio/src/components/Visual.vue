@@ -67,8 +67,8 @@ export default {
 .swiper-slide {
   @include setFlex(flex, left, center);
   height: 90vh;
-  color: $color01;
-  background-color: $color02;
+  color: $ColorWhite;
+  background-color: $ColorBlack;
 
   .swiper_text {
     @include setFlex(flex, center, left);
@@ -78,15 +78,43 @@ export default {
     box-sizing: border-box;
 
     strong {
-      font-size: 32px;
+      font-size: $font-x-lg;
       font-weight: 900;
     }
     p {
       margin-top: 20px;
-      font-size: 14px;
       line-height: 25px;
     }
   }
 }
 // swiper_slide end
+
+// 태블릿
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+  .swiper-slide {
+    .swiper_text {
+      padding: 0 20px;
+    }
+  }
+}
+
+// 모바일
+@media screen and (max-width: 767px) {
+  .swiper-slide {
+    .swiper_text {
+      width: auto;
+      padding: 0 20px;
+
+      strong {
+        font-size: $font-lg;
+        font-weight: 900;
+      }
+      p {
+        margin-top: 10px;
+        font-size: $font-sm;
+        line-height: 20px;
+      }
+    }
+  }
+}
 </style>

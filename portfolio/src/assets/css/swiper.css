@@ -27,3 +27,23 @@
 
 .swiper-container .swiper-button-prev:hover::after,
 .swiper-container .swiper-button-next:hover::after {border-bottom: 3px solid white;}
+
+/* 태블릿 */
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+  .swiper-container .swiper-button-prev {left: 20px;}
+  .swiper-container .swiper-button-next {left: 140px;}
+  .swiper-pagination {left: 80px;}
+}
+
+/* 모바일 */
+@media screen and (max-width: 767px){
+  .swiper-container .swiper-button-prev,
+  .swiper-container .swiper-button-next,
+  .swiper-container .swiper-pagination {
+    font-size: 20px;
+  }
+
+  .swiper-container .swiper-button-prev {left: 20px;}
+  .swiper-container .swiper-button-next {left: 180px;}
+  .swiper-pagination {left: 100px;}
+}

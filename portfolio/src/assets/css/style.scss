@@ -26,8 +26,18 @@
 }
 
 // 색상을 변수로 저장하여 전체적으로 바꾸기 쉽게
-$color01: white;
-$color02: black;
+$ColorWhite: white;
+$Colorgray: rgb(142,142,142);
+$ColorBlack: black;
+$ColorBlack2: rgba(23,23,23,0.7);
+
+
+// font-size
+$font-sm: 12px;
+$font-md: 14px;
+$font-lg: 24px;
+$font-x-lg: 32px;
+$font-x-lg_02: 42px;
 
 section {
   width: calc(100% - 80px);

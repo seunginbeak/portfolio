@@ -60,4 +60,31 @@ export default {
     }
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+  .work {
+    .work_content {
+      > ul {
+        @include setGrid(grid, 1, 1fr, 6, 1fr, 0);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .work {
+    .work_list {
+      display: none;
+    }
+
+    // 포트폴리오 영역 그리드 사용
+    .work_content {
+      width: 100%;
+      margin-left: 0;
+      > ul {
+        @include setGrid(grid, 1, 1fr, 6, 1fr, 0);
+      }
+    }
+  }
+}
 </style>

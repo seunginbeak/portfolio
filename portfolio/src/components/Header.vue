@@ -74,7 +74,7 @@ export default {
     @include setPosition(fixed, 20px, auto, auto, 40px, 1000);
     height: 60px;
     strong {
-      font-size: 42px;
+      font-size: $font-x-lg_02;
       font-weight: 900;
     }
     span {
@@ -86,7 +86,7 @@ export default {
   // logo end
   // hambergur_menu
   .hambergur_menu {
-    @include setPosition(fixed, 26px, 26px, auto, auto, 1020);
+    @include setPosition(fixed, 30px, 26px, auto, auto, 1020);
     cursor: pointer;
     width: 28px;
     height: 28px;
@@ -99,12 +99,13 @@ export default {
       border-radius: 4px;
       text-indent: -10000px;
       color: transparent;
-      background-color: $color01;
+      background-color: $ColorWhite;
     }
     // // hambergur_menu 클릭시 close버튼으로 변경
     &.close {
       > span {
         @include setPosition(absolute, 50%, auto, auto, 50%, 1020);
+        margin: 0;
       }
       > span:nth-child(1) {
         transform: translate(-50%, -50%) rotate(45deg);
@@ -118,5 +119,46 @@ export default {
     }
   }
   // hambergur_menu end
+}
+
+// 태블릿
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+  .header {
+    .logo {
+      height: auto;
+      left: 20px;
+      strong {
+        font-size: $font-x-lg;
+        font-weight: 900;
+      }
+      span {
+        margin-top: -3px;
+        margin-left: 2px;
+        font-size: $font-sm;
+      }
+    }
+  }
+}
+
+// 모바일
+@media screen and (max-width: 767px) {
+  .header {
+    .logo {
+      height: auto;
+      left: 20px;
+
+      strong {
+        color: $ColorWhite;
+        font-size: $font-x-lg;
+        font-weight: 900;
+      }
+      span {
+        color: $ColorWhite;
+        margin-top: -3px;
+        margin-left: 2px;
+        font-size: $font-sm;
+      }
+    }
+  }
 }
 </style>
