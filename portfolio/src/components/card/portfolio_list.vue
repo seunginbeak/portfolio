@@ -63,29 +63,4 @@ export default {
   }
   // hover end
 }
-
-// 태블릿
-@media screen and (min-width: 767px) and (max-width: 1100px) {
-  .portfolio_list {
-    .overlay_bg,
-    .portfolio_title {
-      @include setPosition(absolute, auto, 0, 0, 0, 980);
-      @include setFlex(flex, center, center);
-      height: 40px;
-      font-size: $font-md;
-      color: $ColorWhite;
-      background-color: $ColorBlack2;
-    }
-    .overlay_bg {
-      > a {
-        @include setFlex(flex, center, center);
-        width: 100%;
-        height: 100%;
-        > p {
-          display: none;
-        }
-      }
-    }
-  }
-}
 </style>

@@ -41,4 +41,29 @@ export default {
     margin-top: 20px;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+  .portfolio {
+    padding: 40px 20px;
+    > h2 {
+      font-size: $font-lg;
+      font-weight: 900;
+    }
+    .portfolio_content {
+      @include setGrid(grid, 2, 1fr, 3, 1fr, 20px);
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .portfolio {
+    padding: 40px 20px;
+    > h2 {
+      font-size: $font-lg;
+    }
+    .portfolio_content {
+      @include setGrid(grid, 1, 1fr, 6, 1fr, 20px);
+    }
+  }
+}
 </style>
