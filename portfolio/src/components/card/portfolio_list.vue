@@ -2,9 +2,9 @@
   <div class="portfolio_list">
     <img :src="imageLink" :alt="portfolio_list.alt" />
     <div class="overlay_bg">
-      <router-link :to="link_id">
+      <a :href="link_id">
         <p>{{ portfolio_list.overlay_text }}</p>
-      </router-link>
+      </a>
     </div>
     <div class="portfolio_title">{{ portfolio_list.title }}</div>
   </div>
