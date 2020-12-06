@@ -25,17 +25,13 @@
 <script>
 // import Swiper core and required components
 import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
-
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
-
-// Import Swiper styles
-import "swiper/swiper.scss";
-import "swiper/components/navigation/navigation.scss";
-import "swiper/components/pagination/pagination.scss";
-
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, A11y]);
+
+// 모듈에 있는 swiper 기본 스타일
+import "swiper/swiper.scss";
 
 // Import Swiper styles
 export default {
@@ -69,6 +65,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/css/style.scss";
+// netlify에서 css style을 가져오지 못하여 따로 링크
+@import url("https://unpkg.com/swiper/swiper-bundle.min.css");
 
 .swiper_list {
   height: 35vw;
