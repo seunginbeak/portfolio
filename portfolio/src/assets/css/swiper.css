@@ -1,16 +1,15 @@
 /* swiper 버튼 style */
-.swiper-container {
+/* visual swiper */
+.visual .swiper-container {
   position: relative;
 }
-
-.swiper-container .swiper-button-prev,
-.swiper-container .swiper-button-next,
-.swiper-container .swiper-pagination {
+.visual .swiper-container .swiper-button-prev,
+.visual .swiper-container .swiper-button-next,
+.visual .swiper-container .swiper-pagination {
   position: absolute;
   top: auto;
   bottom: 40px;
   z-index: 300;
-  width: 60px;
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 900;
@@ -18,32 +17,63 @@
   text-align: center;
 }
 
-.swiper-container .swiper-button-prev {left: 60px;}
-.swiper-container .swiper-button-next {left: 180px;}
+.visual .swiper-container .swiper-button-prev {left: 60px;}
+.visual .swiper-container .swiper-button-next {left: 180px;}
 .swiper-pagination {left: 120px;}
 
-.swiper-container .swiper-button-prev::after {content: "BACK";}
-.swiper-container .swiper-button-next::after {content: "NEXT";}
+.visual .swiper-container .swiper-button-prev::before {content: "BACK";}
+.visual .swiper-container .swiper-button-next::before {content: "NEXT";}
 
-.swiper-container .swiper-button-prev:hover::after,
-.swiper-container .swiper-button-next:hover::after {border-bottom: 3px solid white;}
+
+.visual .swiper-container .swiper-button-prev::after,
+.visual .swiper-container .swiper-button-next::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+}
+
+.visual .swiper-container .swiper-button-prev:hover::after,
+.visual .swiper-container .swiper-button-next:hover::after {
+  width: 0;
+  transition: 1s;
+}
 
 /* 태블릿 */
 @media screen and (min-width: 768px) and (max-width: 1100px) {
-  .swiper-container .swiper-button-prev {left: 20px;}
-  .swiper-container .swiper-button-next {left: 140px;}
+  .visual .swiper-container .swiper-button-prev {left: 20px;}
+  .visual .swiper-container .swiper-button-next {left: 140px;}
   .swiper-pagination {left: 80px;}
 }
 
 /* 모바일 */
 @media screen and (max-width: 767px){
-  .swiper-container .swiper-button-prev,
-  .swiper-container .swiper-button-next,
-  .swiper-container .swiper-pagination {
+  .visual .swiper-container .swiper-button-prev,
+  .visual .swiper-container .swiper-button-next,
+  .visual .swiper-container .swiper-pagination {
     font-size: 20px;
   }
 
-  .swiper-container .swiper-button-prev {left: 20px;}
-  .swiper-container .swiper-button-next {left: 180px;}
+  .visual .swiper-container .swiper-button-prev {left: 20px;}
+  .visual .swiper-container .swiper-button-next {left: 180px;}
   .swiper-pagination {left: 100px;}
+}
+
+
+
+/* work_swiper css */
+.work_swiper .swiper-button-prev::after,
+.work_swiper .swiper-button-next::after {
+  color: white;
+}
+
+.work_swiper .swiper-pagination > span {
+  width: 30px;
+  height: 5px;
+  border-radius: 5px;
+}
+
+.work_swiper .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: white;
 }

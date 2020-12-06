@@ -3,7 +3,7 @@
     <div class="sidebar_content">
       <router-link :to="SidebarText.link">
         <!-- Home / Work에따라 text와 a link를 가져와 교체 -->
-        <h2>{{ SidebarText.title }}</h2>
+        <h2 class="underline">{{ SidebarText.title }}</h2>
       </router-link>
     </div>
   </aside>
@@ -33,15 +33,7 @@ export default {
     transform: rotate(-90deg);
     h2 {
       &::after {
-        content: " ";
-        display: block;
-        width: 100%;
-        height: 3px;
         background-color: $ColorWhite;
-      }
-      &:hover::after {
-        width: 0;
-        transition: 1s;
       }
     }
   }

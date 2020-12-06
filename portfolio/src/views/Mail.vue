@@ -2,37 +2,34 @@
   <div class="wrap">
     <Header :logo="logo" />
     <Sidebar :SidebarText="SidebarText" />
-    <Work />
-    <Footer />
+    <MailContent />
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
 import Sidebar from "@/components/Sidebar.vue";
-import Work from "@/components/Work_Portfolio.vue";
-import Footer from "@/components/Footer.vue";
+import MailContent from "@/components/Mail_content.vue";
 
 export default {
   data() {
     return {
       SidebarText: {
-        title: "Mail",
-        link: "/Mail",
+        title: "Home",
+        link: "/",
       },
       logo: {
-        color: "black",
+        color: "white",
       },
     };
   },
   components: {
     Header,
-    Work,
     Sidebar,
-    Footer,
+    MailContent,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-</style>>
+</style>

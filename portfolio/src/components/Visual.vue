@@ -5,7 +5,6 @@
     <div class="swiper-container">
       <!-- swiper 플러그인 사용 -->
       <Swiper
-        class="swiper-wrapper"
         :slides-per-view="1"
         navigation
         :pagination="{ clickable: true, type: 'fraction' }"

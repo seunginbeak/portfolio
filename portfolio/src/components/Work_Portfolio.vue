@@ -1,10 +1,10 @@
 <template>
   <section class="work">
     <ul class="work_list">
-      <li>LIST 01</li>
-      <li>LIST 02</li>
-      <li>LIST 03</li>
-      <li>LIST 04</li>
+      <li>Hansot</li>
+      <li>Ikea</li>
+      <li>Letskorail</li>
+      <li>Portfolio</li>
     </ul>
     <!-- work  -->
     <div class="work_content">
@@ -47,6 +47,22 @@ export default {
 
     > li {
       margin: 20px 0;
+      font-weight: 900;
+      cursor: pointer;
+
+      &::after {
+        content: " ";
+        display: block;
+        width: 0;
+        height: 3px;
+        background-color: $ColorBlack;
+      }
+
+      &:hover::after {
+        content: "";
+        width: 50%;
+        transition: 1s;
+      }
     }
   }
   // work_list end

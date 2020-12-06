@@ -27,20 +27,46 @@
 
 // 색상을 변수로 저장하여 전체적으로 바꾸기 쉽게
 $ColorWhite: white;
+$ColorWhite2: rgba(255,255,255,0.3);
+$ColorWhite3: rgb(230, 230, 230);
 $Colorgray: rgb(142,142,142);
 $ColorBlack: black;
 $ColorBlack2: rgba(23,23,23,0.7);
-
+$ColorRed: #c8384a;
+$transparent: transparent;
 
 // font-size
 $font-sm: 12px;
 $font-md: 14px;
+$font-md2: 20px;
 $font-lg: 24px;
 $font-x-lg: 32px;
 $font-x-lg_02: 42px;
 
+// section 영역 전체 너비값
 section {
   width: calc(100% - 80px);
+}
+
+// work_detail.vue에 필요한 각 컴포넌트에 work_cont 의 너비값
+.work_cont {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.underline::after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+}
+
+.underline:hover::after {
+  width: 0;
+  transition: 1s;
 }
 
 

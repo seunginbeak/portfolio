@@ -14,7 +14,7 @@ export default {
       {
         icon: "xi-facebook",
         text: "페이스북 바로가기",
-        link: "https://instagram.com",
+        link: "https://facebook.com",
       },
       {
         icon: "xi-twitter",

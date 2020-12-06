@@ -2,9 +2,9 @@
   <div class="portfolio_list">
     <img :src="imageLink" :alt="portfolio_list.alt" />
     <div class="overlay_bg">
-      <a :href="portfolio_list.link">
+      <router-link :to="link_id">
         <p>{{ portfolio_list.overlay_text }}</p>
-      </a>
+      </router-link>
     </div>
     <div class="portfolio_title">{{ portfolio_list.title }}</div>
   </div>
@@ -17,6 +17,10 @@ export default {
     // 모든 포트폴리오 이미지에대한 위치
     imageLink() {
       return require("@/assets/images" + this.portfolio_list.image);
+    },
+
+    link_id() {
+      return "/work/" + this.portfolio_list.id;
     },
   },
 };

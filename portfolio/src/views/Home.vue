@@ -6,6 +6,7 @@
     <Profile />
     <About />
     <Portfolio />
+    <Footer />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import Visual from "@/components/Visual.vue";
 import Profile from "@/components/Profile.vue";
 import About from "@/components/About.vue";
 import Portfolio from "@/components/Portfolio.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   data() {
@@ -37,6 +39,7 @@ export default {
     About,
     Portfolio,
     Sidebar,
+    Footer,
   },
 };
 </script>
