@@ -2,10 +2,10 @@
   <header class="header">
     <!-- Home 과 work에서 로고 색상 변경 -->
     <h1 class="logo" :style="{ color: logo.color }">
-      <router-link to="/">
+      <a href="/">
         <strong>BEAK</strong>
         <span>WebPublisher</span>
-      </router-link>
+      </a>
     </h1>
 
     <div
