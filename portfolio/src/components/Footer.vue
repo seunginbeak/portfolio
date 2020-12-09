@@ -50,7 +50,7 @@ export default {};
 
     > li {
       position: relative;
-      padding: 20px 40px;
+      padding: 20px 0;
 
       > a {
         > i {
@@ -71,6 +71,7 @@ export default {};
 
         p {
           display: inline-block;
+          margin-left: 40px;
           font-size: $font-sm;
         }
       }
@@ -95,6 +96,24 @@ export default {};
     padding: 80px;
     font-size: $font-md;
     text-align: center;
+  }
+}
+
+// 모바일
+@media screen and (max-width: 767px) {
+  .footer {
+    font-size: $font-md;
+
+    .footer_profile {
+      @include setFlex(block, center, center);
+      padding: 0 20px;
+    }
+
+    .footer_copylight {
+      padding: 20px;
+      font-size: $font-sm;
+      text-align: center;
+    }
   }
 }
 </style>

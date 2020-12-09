@@ -12,10 +12,10 @@
       <nav class="gnb">
         <ul>
           <li>
-            <router-link to="/">
+            <a href="/">
               <strong>HOME</strong>
               <span>Go to Home</span>
-            </router-link>
+            </a>
           </li>
           <li>
             <a href="/Work">
@@ -24,7 +24,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="/Mail">
               <strong>MAIL</strong>
               <span>Go to Mail</span>
             </a>

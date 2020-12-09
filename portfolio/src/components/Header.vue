@@ -148,12 +148,10 @@ export default {
       left: 20px;
 
       strong {
-        color: $ColorWhite;
         font-size: $font-x-lg;
         font-weight: 900;
       }
       span {
-        color: $ColorWhite;
         margin-top: -3px;
         margin-left: 2px;
         font-size: $font-sm;

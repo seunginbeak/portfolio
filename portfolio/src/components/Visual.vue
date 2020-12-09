@@ -19,11 +19,7 @@
           <div class="swiper_text">
             <strong> {{ swiperPage.title }} </strong>
             <p>
-              {{ swiperPage.text }} <br />
-              {{ swiperPage.text2 }} <br />
-              {{ swiperPage.text3 }} <br />
-              {{ swiperPage.text4 }} <br />
-              {{ swiperPage.text5 }}
+              {{ swiperPage.text }}
             </p>
           </div>
         </swiper-slide>
@@ -72,7 +68,6 @@ export default {
   .swiper_text {
     @include setFlex(flex, center, left);
     flex-flow: column;
-    width: 500px;
     padding: 0 40px;
     box-sizing: border-box;
 
@@ -81,8 +76,8 @@ export default {
       font-weight: 900;
     }
     p {
-      margin-top: 20px;
       line-height: 25px;
+      white-space: pre-line;
     }
   }
 }

@@ -143,4 +143,53 @@ export default {
     // work detail end
   }
 }
+// 모바일
+@media screen and (max-width: 767px) {
+  .container {
+    .work_cont {
+      .detail {
+        padding: 20px 0;
+
+        > h2 {
+          font-size: $font-md;
+        }
+
+        .detail_content {
+          margin-top: 10px;
+          // dt, dd 공용 style
+          > dt,
+          dd {
+            height: 25px;
+            font-size: $font-sm;
+            line-height: 25px;
+          }
+          // detail text title
+          > dt {
+            width: 60px;
+          }
+          // detail text title end
+          // detail text content
+          > dd {
+            margin-left: 60px;
+            margin-top: -25px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: $font-sm;
+
+            // detail 색상
+            > ul {
+              > li {
+                width: 12px;
+                height: 12px;
+              }
+            }
+            // detail 색상 end
+          }
+          // detail text content end
+        }
+      }
+      // work detail end
+    }
+  }
+}
 </style>

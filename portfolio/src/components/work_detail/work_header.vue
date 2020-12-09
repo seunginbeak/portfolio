@@ -109,4 +109,29 @@ export default {
     }
   }
 }
+
+// 태블릿
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+}
+
+// 모바일
+@media screen and (max-width: 767px) {
+  .container {
+    .work_cont {
+      .work_gnb {
+        display: none;
+      }
+
+      .work_title {
+        margin-top: 0;
+        > ul {
+          margin-top: 20px;
+          > li {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

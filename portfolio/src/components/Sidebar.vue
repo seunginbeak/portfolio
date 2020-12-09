@@ -1,10 +1,10 @@
 <template>
   <aside class="sidebar">
     <div class="sidebar_content">
-      <router-link :to="SidebarText.link">
+      <a :href="SidebarText.link">
         <!-- Home / Work에따라 text와 a link를 가져와 교체 -->
         <h2 class="underline">{{ SidebarText.title }}</h2>
-      </router-link>
+      </a>
     </div>
   </aside>
 </template>

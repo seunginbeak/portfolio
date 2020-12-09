@@ -10,20 +10,20 @@
         <h3 class="title">about</h3>
 
         <p class="text_01">
-          현재 웹퍼블리셔 나아가 프론트엔드개발자가 되고싶어 <br />
-          취업 문을 두드리고 있는 백승인 이라고 합니다. <br />
+          현재 웹퍼블리셔 나아가 프론트엔드개발자가 되고싶어 취업 문을 두드리고
+          있는 백승인 이라고 합니다. <br />
           늦은 나이에 시작했다고 생각되어 다른분들보다 이것을 잘하고 저것을
-          잘한다고 확신은 못드리겠습니다. 그렇기 때문에 제가 할 수있는 것부터
-          시작하고자 합니다.
+          잘한다고 확신은 못드리겠습니다. <br />
+          그렇기 때문에 제가 할 수있는 것부터 시작하고자 합니다.
         </p>
 
         <strong>할수 있는 것</strong>
 
         <p class="text_02">
-          1. 기본이 되는 HTML & CSS 이해 <br />
-          2. javascript & jQuery 이해 <br />
-          3. github를 이용해 Push 와 Pull 정도는 사용 가능 <br />
-          4. Vue를 사용한 Main 포트폴리오 제작으로 기초정도는 사용가능<br />
+          1. 기본이 되는 HTML & CSS <br />
+          2. javascript & jQuery 기초 이해 <br />
+          3. github의 기초 <br />
+          4. Vue를 사용한 Main 포트폴리오 제작으로 vue에 대한 기초<br />
         </p>
       </div>
       <!-- text end -->
@@ -46,7 +46,10 @@ export default {};
     @include setFlex(flex, center, center);
     column-gap: 40px;
     .about_img {
-      flex: 1;
+      flex: 0 33.33%;
+      max-width: 33.33%;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
     // text
     .about_text {
@@ -61,7 +64,7 @@ export default {};
         margin-top: 20px;
       }
       p {
-        font-size: $font-sm;
+        font-size: $font-md;
         line-height: 25px;
 
         &.text_01 {

@@ -39,10 +39,35 @@ export default {
       flex: 1;
       padding: 60px 20px;
       > p {
+        margin-top: 20px;
         font-size: $font-sm;
         font-weight: 900;
         line-height: 24px;
         white-space: pre-line;
+      }
+    }
+  }
+}
+
+// 태블릿
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+}
+
+// 모바일
+@media screen and (max-width: 767px) {
+  .container {
+    .work_cont {
+      display: block;
+      > li {
+        margin-top: 20px;
+        padding: 0;
+        > p {
+          margin-top: 10px;
+          font-size: $font-sm;
+          font-weight: 900;
+          line-height: 24px;
+          white-space: pre-line;
+        }
       }
     }
   }
