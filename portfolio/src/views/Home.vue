@@ -1,5 +1,6 @@
 <template>
   <div class="wrap">
+    <Loading/>
     <Header :logo="logo" />
     <Sidebar :SidebarText="SidebarText" />
     <Visual />
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import Loading from "@/components/roading.vue";
 import Header from "@/components/Header.vue";
 import Sidebar from "@/components/Sidebar.vue";
 import Visual from "@/components/Visual.vue";
@@ -33,6 +35,7 @@ export default {
   },
   name: "Home",
   components: {
+    Loading,
     Header,
     Visual,
     Profile,
