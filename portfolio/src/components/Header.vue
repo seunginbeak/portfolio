@@ -1,13 +1,12 @@
 <template>
   <header class="header">
     <!-- Home 과 work에서 로고 색상 변경 -->
-    <h1 class="logo" :style="{ color: logo.color }">
+    <h1 class="logo" :style="{ color: logo.color, top: top}">
       <a href="/">
         <strong>BEAK</strong>
         <span>WebPublisher</span>
       </a>
     </h1>
-
     <div
       class="hambergur_menu"
       @click="Toggle"
@@ -41,7 +40,11 @@ export default {
         isMove: false,
         isButton: false,
       },
+      top: 20 + 'px',
+      scrolled: 0
     };
+  },
+  computeds: {
   },
   methods: {
     // SideMenu 오픈
@@ -61,7 +64,31 @@ export default {
         this.Open();
       }
     },
+    // 스크롤 이벤트
+    handleScroll () {
+      // 이벤트가 발생하면 scrollY의 값을 scrolled에 저장한다.
+      this.scrolled = window.scrollY
+      // scrolled 값이 0 보다 높으면 작동
+      if (this.scrolled > 0) {
+        // 0.3초 후에 logo가 위로 올라간다.
+        setTimeout(() => {
+          this.top = -100 + "%"
+        }, 300);
+      } else {
+        setTimeout(() => {
+          // 0.3초 후에 logo가 위로 내려온다.
+          this.top = 20 + "px"
+        }, 300);
+      }
+    }
   },
+  created () {
+    // 이벤트 핸들러
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  // destroyed () {
+  //   window.removeEventListener('scroll', this.handleScroll);
+  // },
 };
 </script>
 
@@ -73,6 +100,8 @@ export default {
   .logo {
     @include setPosition(fixed, 20px, auto, auto, 40px, 1000);
     height: 60px;
+    transition: 0.5s;
+
     strong {
       font-size: $font-x-lg_02;
       font-weight: 900;
