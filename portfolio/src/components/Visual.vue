@@ -66,7 +66,7 @@ export default {
   background-color: $ColorBlack;
 
   .swiper_text {
-    @include setFlex(flex, center, left);
+    @include setFlex(flex, center, normal);
     flex-flow: column;
     padding: 0 40px;
     box-sizing: border-box;
