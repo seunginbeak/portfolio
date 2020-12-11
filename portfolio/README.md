@@ -1,23 +1,21 @@
-# portfolio
+# 백승인
 
-## Project setup
+## 간단한 설명
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+vue를 사용하여 제작한 포트폴리오
+-사이트가기: (https://bsi0228.netlify.app)
 ```
 
-### Compiles and minifies for production
+### 사용기술
 ```
-npm run build
+- vue : 기초
+- github : 기초
 ```
 
-### Lints and fixes files
+### 추가사항
 ```
-npm run lint
+첫 작품으로 부족한 점이 많습니다.
+코드리뷰를 하신 후에 부족한점을 메모해주시면 공부하는데 도움이 될것 같습니다.
 ```
 
 ### Customize configuration

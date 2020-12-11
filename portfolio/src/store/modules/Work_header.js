@@ -73,7 +73,7 @@ export default {
         info_title_04: "기여도",
         info_text_01: "클론코딩",
         info_text_02: "2019",
-        info_text_03: "약 3주 소요",
+        info_text_03: "1개월 소요",
         info_text_04: "퍼블리싱: 100퍼",
         // work_header gnb end
         // work_header main text
